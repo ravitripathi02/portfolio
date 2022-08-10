@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        padding: 0;
+        margin: 0;
+    }
+/* body{
+    background-color: aqua;
+} */
+.navigation{
+    width: 80vw;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    padding-bottom: 40px;
+}
+.nav_left{
+    display: flex;
+    position: relative;
+}
+.nav_right{
+  
+    display: flex;
+    list-style: none;
+    position: absolute;
+    right: 1vw;
+    top: 15px;
+    flex-direction: row;
+}
+.nav_right ul{
+    right: 10px;
+    
+    display: flex;
+}
+.nav_right ul li{
+    padding-left: 20px;
+    list-style: none;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+}
+.nav_right ul li a{
+    text-decoration: none;
+    display: flex;
+    flex-direction: row;
+}
+.home{
+    display: flex;
+    width: 80vw;
+    margin: auto;
+    height: 500px;
+    box-shadow: 3px 3px 6px 7px rgb(29 28 28);
+}
+.content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width:50%;
+    flex-direction: column;
+}
+
+.img{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width:50%;
+    flex-direction: column;
+}
+.name{
+    display: flex;
+    
+}
+.dev{
+    padding-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    color: rgb(180, 179, 179);
+}
+.little_about{
+    padding-top: 10px;
+    display: flex;
+    width: 23vw;
+    margin-left: auto;
+    margin-right: auto;
+    color: rgb(180, 179, 179);
+}
+.contact_btn{
+    display: flex;
+    background-color: black;
+    flex-direction: row;
+}
+button{
+    padding: 10px;
+    display: flex;
+}
+.contact_icon{
+    display: flex;
+}
+.first_semi{
+    height: 20px;
+    background-color: black;
+    width: 10px;
+    border-top-right-radius:10px ;
+    border-bottom-right-radius:10px;
+    transform: rotate(110deg) translate(-5px, -5px);
+    }
+    .second_semi{
+    height: 20px;
+    background-color: black;
+    /* border-radius: 2px solid blue; */
+    width: 10px;
+    border-top-right-radius:10px ;
+    border-bottom-right-radius:10px;
+    transform: rotate(240deg) translate(3px, -3px);
+    }
+    .triangle::before{
+        display: block;
+        content: " ";
+        left:10px;
+        bottom: 10px;
+        position: relative;
+       width: 30vw;
+       height: 30vw;
+       background-color: yellow;
+    }
+    .triangle{
+        display: block;
+        width: 30vw;
+       height: 30vw;
+       /* z-index: 10000; */
+       background-color: black;
+        position: absolute;
+        
+    }
+    .triangle::after{
+        position: absolute;
+        left:50%;
+        top: 50%;
+        content: "ravi";
+    }
+    .aboutme{
+        margin-top: 40px;
+     
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .horizontal{
+        width: 30px;
+        height: 5px;
+        border-radius: 15px;
+        margin-bottom: 40px;
+        background-color: black;
+    }
+    .main_about{
+        display: flex;
+    width: 70vw;
+    margin: auto;
+    /* height: 60vh; */
+    padding-bottom: 100px;
+   margin-bottom: 45px;
+    }
+    .about_img{
+        display: flex;
+    align-items: center;
+    justify-content: center;
+    width:50%;
+    
+    flex-direction: column;
+    }
+    .circle{
+        width: 20vw;
+        height: 20vw;
+        border-radius:18.75vw ;
+        background-color: white;
+        box-shadow: 3px 3px 6px 7px rgb(29 28 28);
+    }
+    .about_content{
+        display: flex;
+        padding-left: 2vw;
+        padding-top: 2vw;
+    align-items: left;
+    justify-content: left;
+    width:50%;
+
+    flex-direction: column;
+    }
+    .intro{
+        display: flex;
+        justify-content: left;
+        color: rgb(146, 145, 145);
+        flex-direction: column;
+    }
+    .main_intro{
+        display: flex;
+        padding-top: 20px;
+        margin: 20px;
+        color: rgb(146, 145, 145);
+    }
+    .exp{
+        display: flex;
+        margin: 30px;
+    }
+    .front_end{
+       padding-left: 4vw;
+    }
+    .back_end{
+       padding-left: 4vw;
+    }
+    .cv_btn{
+        padding-left: 3vw;
+    }
+    button{
+        cursor: pointer;
+    }
+    .technical_skills{
+        display: flex;
+    width: 70vw;
+    margin: auto;
+    height: 70vh;
+   margin-bottom: 45px;
+    }
+    .tech_left{
+        display: flex;
+    align-items: left;
+    position: relative;
+    justify-content: left;
+    padding: 30px;
+    width:50%;
+    background-color: azure;
+    flex-direction: column;
+    }
+    .front_end_skill{
+        display: flex;
+        flex-direction: row;
+        justify-content: left;
+    }
+    .front_end_left{
+        color:rgb(146, 145, 145) ;
+        display: flex;
+    }
+    .front_end_right{
+        position: absolute;
+        display: flex;
+        right: 5%;
+        top: 40px;
+        /* justify-content: end; */
+    }
+    .m-nav1{
+            
+            background-color: black;
+            width: 10px;
+            transform: rotate(45deg)  translate(1px ,10px);
+            border-radius: 10px;
+            transition:all .5s ease-in-out;
+            height: 4px;
+            margin-bottom: 5px;
+        }
+        
+        .m-nav2{
+            
+            background-color: black;
+            width: 10px;
+            transform: rotate(-45deg)  translate(-16px ,-0.2px);
+            transform-origin: top left;
+            border-radius: 10px;
+            height: 4px;
+            transition:all .5s ease-in-out;
+            margin-bottom: 5px;
+        }
+    .m+.main_skills{
+        display: flex;
+       
+        flex-direction: column;
+    }
+    .m{
+        display: none;
+    }
+    .main_skills .html {
+        padding: 10px;
+    }
+    .bar{
+        display: flex;
+        width: 80%;
+        margin-left: 10px;
+        height: 10px;
+        position: relative;
+        background-color: white;
+        border-radius: 4px;
+    }
+    #inside_bar{
+        width: 100%;
+        border-radius: 4px;
+        background-color: rgb(99, 99, 185);
+    }
+    .play-animation{
+        /* width: 100%;
+        border-radius: 4px;
+        background-color: rgb(99, 99, 185); */
+        animation: progress-aniamtion 5s forwards;
+    }
+    @keyframes progress-aniamtion{
+        0%{width: 0%;}
+        100%{width: 50%;}
+    }
+    .back_end_skills{
+        display: flex;
+        padding-top: 20px;
+    }
+    .back_end_left{
+        color:rgb(146, 145, 145) ;
+        display: flex;
+    }
+    .back_end_right{
+       
+        position: absolute;
+        display: flex;
+        right: 5%;
+        
+        /* justify-content: end; */
+    }
+    .m1-nav1{
+            
+            background-color: black;
+            width: 10px;
+            transform: rotate(45deg)  translate(1px ,10px);
+            border-radius: 10px;
+            transition:all .5s ease-in-out;
+            height: 4px;
+            margin-bottom: 5px;
+        }
+        
+        .m1-nav2{
+            
+            background-color: black;
+            width: 10px;
+            transform: rotate(-45deg)  translate(-16px ,-0.2px);
+            transform-origin: top left;
+            border-radius: 10px;
+            height: 4px;
+            transition:all .5s ease-in-out;
+            margin-bottom: 5px;
+        }
+    .m1+.main_skills_back{
+        display: flex;
+       
+        flex-direction: column;
+    }
+    .m1{
+        display: none;
+    }
+    .main_skills_back .html1 {
+        padding: 10px;
+    }
+    .bar1{
+        display: flex;
+        width: 80%;
+        margin-left: 10px;
+        height: 10px;
+        background-color: white;
+        border-radius: 4px;
+    }
+    .tech_right{
+        display: flex;
+    align-items: left;
+    position: relative;
+    justify-content: right;
+    padding: 30px;
+    width:50%;
+    background-color: red;
+    flex-direction: column;
+    }
+    .project{
+        display: flex;
+    width: 70vw;
+    margin: auto;
+    height: 40vh;
+   margin-bottom: 45px;
+    }
+    #first_project{
+        width:50%;
+        overflow: hidden;
+        /* display: flex; */
+        /* flex-direction: row; */
+        /* position: relative; */
+        animation: slide-aniamtion 9s linear infinite;
+    }
+    .f{
+        background-color: cornflowerblue;
+        /* position: absolute; */
+        width:100%;
+        height: 40vh;
+    }
+    .s{
+        background-color: rgb(38, 41, 48);
+        /* position: absolute; */
+        width:100%;
+        height: 40vh;
+    }
+    .t{
+        background-color: rgb(252, 32, 178);
+        /* position: absolute; */
+        width:100%;
+        height: 40vh;
+    }
+    #first_project figure{
+        /* position: relative; */
+        width:105vw;
+        left: 0;
+        animation: 20s first_project infinite;
+    }
+    /* @keyframes slide-aniamtion{
+        0%{background-color: blue; transform: translateX(300px);}
+        45%{background-color: blueviolet;}
+        80%{background-color: chocolate;}
+    }
+    .first_info{
+        width:50%;
+    } */
+</style>
+<body>
+    <div class="navigation">
+        <div class="nav_left">
+            <div class="logo">
+                <h1>Portfolio</h1>
+            </div>
+        </div>
+        <div class="nav_right">
+            <ul>
+                <li>
+                    <a href="">Home</a>
+                </li>
+                <li>
+                    <a href="">About Me</a>
+                </li>
+                <li>
+                    <a href="">Skills</a>
+                </li>
+                <li>
+                    <a href="">Project</a>
+                </li>
+                <li>
+                    <a href="">Contact Us</a>
+                </li>
+            </ul>
+        </div>
+      
+    </div>
+    <div class="home">
+          <div class="content">
+              <div class="name">
+                  <h1>Hi I'am Ravi</h1>
+              </div>
+              <div class="dev">
+                <p>Web Developer</p>
+              </div>
+              <div class="little_about">
+                  High level experience in Web Design and <br>
+                  Devlopment knowledge, producing quality <br> work
+              </div>
+              <div class="contact_btn">
+                 <div><button>Contact Me
+                      <div class="contact_icon">
+                          <div class="first_semi"></div>
+                          <div class="second_semi"></div>
+                      </div>
+                  </button>
+                </div>
+              </div>
+          </div>  
+          <div class="img">
+             
+          <div class="triangle">
+             
+          </div>
+        </div>
+    </div>
+    <div class="aboutme">
+        <div class="about_head">
+            <h1>
+                About Me
+            </h1>
+        </div>
+        <div class="horizontal"></div>
+    </div>
+    <div class="main_about">
+        <div class="about_img">
+            <div class="circle"></div>
+        </div>
+        <div class="about_content">
+            <div class="intro">My Introduction</div>
+            <div class="main_intro">Web Devloper, with extensive knowledge and years of experience, working in web technology and UI/UX design</div>
+            <div class="exp">
+                <div class="experience">
+                    <h1>01+</h1>
+                    Years<br>experience
+                </div>
+                <div class="front_end">
+                    <h1>03+</h1>
+                    Front-end<br>Projects
+                </div>
+                <div class="back_end">
+                    <h1>03+</h1>
+                    Back-end<br>Projects
+                </div>
+                
+            </div>
+            <div class="cv_btn">
+                <button>Download CV</button>
+            </div>
+        </div>
+    </div>
+    <div class="aboutme">
+        <div class="about_head">
+            <h1>
+                Technical Skills
+            </h1>
+        </div>
+        <div class="horizontal"></div>
+    </div>
+    <div class="technical_skills">
+        <div class="tech_left">
+            <div class="front_end_skill">
+                <div class="front_end_left"><h1>Front-End Devloper</h1></div>
+                <div class="front_end_right" onclick="myFun()">
+                    <div id="m-n1"class="m-nav1" >  
+                    </div>
+                    <div id="m-n2"class="m-nav2"></div>
+                </div>
+            </div>
+                <div class="m" id="main_skills">
+                    <div class="html">HTML</div>
+                    <div class="bar">
+                        <div class="inside_bar" id="inside_bar"></div>
+                    </div>
+                    <div class="html">CSS</div>
+                    <div class="bar">
+                        <div class="inside_bar"></div>
+                    </div>
+                    <div class="html">JavaScript</div>
+                    <div class="bar">
+                        <div class="inside_bar"></div>
+                    </div>
+                    <div class="html">BootStrap</div>
+                    <div class="bar">
+                        <div class="inside_bar"></div>
+                    </div>
+                </div>
+                
+           
+            <div class="back_end_skills">
+                <div class="back_end_left"><h1>Back-End Devlopment</h1></div>
+                <div class="back_end_right" onclick="myFun_back()">
+                    <div id="m1-n1"class="m1-nav1" >  
+                    </div>
+                    <div id="m1-n2"class="m1-nav2"></div>
+                </div>
+            </div>
+                <div class="m1" id="main_skills_back">
+                    <div class="html1">HTML</div>
+                    <div class="bar1">
+                        <div class="inside_bar1"></div>
+                    </div>
+                    <div class="html1">CSS</div>
+                    <div class="bar1">
+                        <div class="inside_bar1"></div>
+                    </div>
+                    <div class="html1">JavaScript</div>
+                    <div class="bar1">
+                        <div class="inside_bar1"></div>
+                    </div>
+                    <div class="html1">BootStrap</div>
+                    <div class="bar1">
+                        <div class="inside_bar1"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="tech_right">
+                <!-- <div class="other_skills">
+                    <div class="other_left">Other Skills</div>
+                    <div class="other_right" onclick="myFun_other()">
+                        <div id="m2-n1"class="m2-nav1" >  
+                        </div>
+                        <div id="m2-n2"class="m2-nav2"></div>
+                    </div>
+                </div>
+                    <div class="m2" id="main_skills_other">
+                        <div class="html2">HTML</div>
+                        <div class="bar2">
+                            <div class="inside_bar2"></div>
+                        </div>
+                        <div class="html2">CSS</div>
+                        <div class="bar2">
+                            <div class="inside_bar2"></div>
+                        </div>
+                        <div class="html2">JavaScript</div>
+                        <div class="bar2">
+                            <div class="inside_bar2"></div>
+                        </div>
+                        <div class="html2">BootStrap</div>
+                        <div class="bar2">
+                            <div class="inside_bar2"></div>
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+    </div>
+        
+
+    </div>
+    <div class="aboutme">
+        <div class="about_head">
+            <h1>
+                Projects
+            </h1>
+        </div>
+        <div class="horizontal"></div>
+    </div>
+    <div class="project">
+        <div id="first_project">
+            <figure>
+            <div class="f"></div>
+            <div class="s"></div>
+            <div class="t"></div>
+            </figure>
+        </div>
+        <div class="first_info"></div>
+    </div>
+
+    <script>
+        var m=0;
+        var ele=document.getElementById("main_skills");
+        var ele1=document.getElementById("main_skills_back");
+        
+        function myFun(){
+            m++;
+            const progressBar=document.getElementById("inside_bar")
+            progressBar.setAttribute('class','play-animation');
+            console.log(m);
+            if(ele1.classList.contains("main_skills_back")){
+                ele1.classList.replace("main_skills_back","m1");
+                ele.classList.replace("m","main_skills");
+                
+            }
+          
+            else if(ele.classList.contains("m")){
+                ele.classList.replace("m","main_skills");
+            }
+            else if(ele.classList.contains("main_skills")){
+                ele.classList.replace("main_skills","m");
+            }
+        }
+        var n=0;
+        function myFun_back(){
+            n++;
+            console.log(n);
+            if(ele.classList.contains("main_skills")){
+                ele.classList.replace("main_skills","m");
+                ele1.classList.replace("m1","main_skills_back");
+                // m++;
+        
+    
+            }
+           
+            else  if(ele1.classList.contains("m1")){
+                ele1.classList.replace("m1","main_skills_back");
+            }
+            else if(ele1.classList.contains("main_skills_back")){
+                ele1.classList.replace("main_skills_back","m1");
+            }
+        }
+    </script>
+</body>
+</html>
