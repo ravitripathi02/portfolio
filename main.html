@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 </head>
 <style>
     *{
@@ -430,6 +431,15 @@ button{
     .first_info{
         width:50%;
     } */
+    span{
+        animation: blinker 1s linear infinite;
+       
+    }
+    @keyframe blinker{
+        50%{
+            opacity:0;
+        }
+    }
 </style>
 <body>
     <div class="navigation">
@@ -461,9 +471,9 @@ button{
     </div>
     <div class="home">
           <div class="content">
-              <div class="name">
-                  <h1>Hi I'am Ravi</h1>
-              </div>
+              <h1><div class="name">
+                  
+              </div></h1>
               <div class="dev">
                 <p>Web Developer</p>
               </div>
@@ -496,11 +506,11 @@ button{
         </div>
         <div class="horizontal"></div>
     </div>
-    <div class="main_about">
+    <div class="main_about" >
         <div class="about_img">
             <div class="circle"></div>
         </div>
-        <div class="about_content">
+        <div class="about_content" data-aos="fade-left">
             <div class="intro">My Introduction</div>
             <div class="main_intro">Web Devloper, with extensive knowledge and years of experience, working in web technology and UI/UX design</div>
             <div class="exp">
@@ -531,7 +541,7 @@ button{
         </div>
         <div class="horizontal"></div>
     </div>
-    <div class="technical_skills">
+    <div class="technical_skills"data-aos="fade-left">
         <div class="tech_left">
             <div class="front_end_skill">
                 <div class="front_end_left"><h1>Front-End Devloper</h1></div>
@@ -683,6 +693,23 @@ button{
                 ele1.classList.replace("main_skills_back","m1");
             }
         }
+        var msgArray=["Hi I'm Ravi"];
+        var textPos=0;
+        var speed=200;
+        typewriter=()=>{
+            document.querySelector(".name").innerHTML=msgArray[0].substring(0,textPos)
+            +"<span>\u25ae</span>";
+            if(textPos++!=msgArray[0].length)
+            setTimeout(typewriter,speed);
+        }
+        window.addEventListener("load",typewriter);
     </script>
+      <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+      <script>
+      AOS.init({
+          offset: 300,
+          duration: 1000,
+      });
+      </script>
 </body>
 </html>
